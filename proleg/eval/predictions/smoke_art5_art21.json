@@ -1,0 +1,44 @@
+{
+  "id": "smoke_art5_art21",
+  "task": "select_incorrect_combination",
+  "choices": {
+    "1": [
+      "ア"
+    ],
+    "2": [
+      "エ"
+    ],
+    "3": [
+      "ア",
+      "エ"
+    ]
+  },
+  "propositions": [
+    {
+      "label": "ア",
+      "text": "未成年者は単に義務を免れる法律行為を同意なくできる（取消されない）",
+      "status": "ok",
+      "facts": [
+        "未成年者_f(甲)",
+        "法律行為_f(甲, 本件行為)",
+        "法定代理人の同意なし_f(本件行為)",
+        "単に権利を得又は義務を免れる行為_f(本件行為)"
+      ],
+      "goal": "取消可能(本件行為)",
+      "expected_if_statement_true": false
+    },
+    {
+      "label": "エ",
+      "text": "詐術を用いても取り消せる",
+      "status": "ok",
+      "facts": [
+        "制限行為能力者_f(甲)",
+        "法律行為_f(甲, 本件契約)",
+        "詐術_f(甲, 本件契約)"
+      ],
+      "goal": "取消不可(本件契約)",
+      "expected_if_statement_true": false
+    }
+  ],
+  "_smoke_gold": "1"
+}
